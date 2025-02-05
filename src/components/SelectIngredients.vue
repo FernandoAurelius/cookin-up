@@ -33,7 +33,6 @@ export default {
         this.categories = await getCategories();
     }
 }
-
 </script>
 
 <style scoped>
