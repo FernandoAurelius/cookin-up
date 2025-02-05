@@ -1,31 +1,31 @@
 <template>
   <header class="banner">
-    <div class="apresentacao">
-      <img src="../assets/images/logo.svg" alt="Logo do Cookin'Up" class="logo">
+    <div class="presentation">
+      <img src="../assets/images/logo.svg" alt="Cookin'Up Logo" class="logo">
 
-      <p class="cabecalho-lg frase-cabecalho">
-        <span class="texto-verde">
-          Um banquete de ideias para
+      <p class="header-lg header-phrase">
+        <span class="green-text">
+          A feast of ideas to
         </span>
-        despertar o chef que há em você!
+        awaken the chef inside you!
       </p>
 
-      <p class="subtitulo-lg">
-        Explore novas receitas todos os dias com os ingredientes que estão ao seu alcance!
+      <p class="subtitle-lg">
+        Explore new recipes every day with ingredients within your reach!
       </p>
     </div>
 
-    <img src="../assets/images/foto-banner.png" alt="
-    Foto de uma mulher cozinhando com uma bacia de vidro nas mãos. Ela
-    está sorrindo e está apoiando um celular entre seu rosto e ombro.
-    " class="foto-banner">
+    <img src="../assets/images/banner-photo.png" alt="
+    Photo of a woman cooking with a glass bowl in her hands. She
+    is smiling and holding a phone between her face and shoulder.
+    " class="banner-photo">
   </header>
 </template>
 
 <style scoped>
   .banner {
   padding: 4rem 7.5rem;
-  color: var(--creme);
+  color: var(--cream);
 
   display: flex;
   justify-content: space-between;
@@ -38,15 +38,15 @@
   margin-bottom: 3rem;
 }
 
-.frase-cabecalho {
+.header-phrase {
   margin-bottom: 2rem;
 }
 
-.texto-verde {
-  color: var(--verde-medio, #3D6D4A);
+.green-text {
+  color: var(--medium-green, #3D6D4A);
 }
 
-.foto-banner {
+.banner-photo {
   width: 35rem;
 }
 
@@ -70,7 +70,7 @@
     padding: 4rem 1.5rem;
   }
 
-  .foto-banner {
+  .banner-photo {
     width: min(100%, 21.25rem);
   }
 }

@@ -1,16 +1,16 @@
 :root {
-  --ocre: #D1451E;
+  --ochre: #D1451E;
   --coral: #F0633C;
-  --coral-claro: #FFDBD1;
-  --creme: #FFFAF3;
-  --verde-escuro: #263A29;
-  --verde-medio: #3D6D4A;
-  --cinza: #444444;
-  --cinza-claro: #EFEFEF;
-  --branco: #FFF;
+  --light-coral: #FFDBD1;
+  --cream: #FFFAF3;
+  --dark-green: #263A29;
+  --medium-green: #3D6D4A;
+  --gray: #444444;
+  --light-gray: #EFEFEF;
+  --white: #FFF;
 
-  --font-family-padrao: Nunito Sans, sans-serif;
-  --cabecalhos: Paytone One, sans-serif;
+  --default-font-family: Nunito Sans, sans-serif;
+  --headers: Paytone One, sans-serif;
 }
 
 *,
@@ -33,51 +33,51 @@ button {
 
 body {
   min-height: 100vh;
-  color: var(--creme);
-  font-family: var(--font-family-padrao);
+  color: var(--cream);
+  font-family: var(--default-font-family);
   font-size: 16px;
   font-weight: 400;
   font-style: normal;
-  background: url('./images/fundo-banner.png'), var(--verde-escuro, #263A29);
+  background: url('./images/banner-bg.png'), var(--dark-green, #263A29);
 }
 
-.cabecalho-lg {
-  font-family: var(--cabecalhos);
+.header-lg {
+  font-family: var(--headers);
   font-size: 3.35625em;
   line-height: 120%; /* 4.0275em */
 }
 
-.cabecalho {
-  font-family: var(--cabecalhos);
+.header {
+  font-family: var(--headers);
   font-size: 2.75em;
   line-height: 120%; /* 3.3em */
 }
 
-.subtitulo-lg {
+.subtitle-lg {
   font-size: 1.9375em;
   line-height: 150%; /* 2.90625em */
 }
 
-.paragrafo-lg {
+.paragraph-lg {
   font-size: 1.375em;
   line-height: 150%; /* 2.90625em */
 }
 
-.paragrafo {
+.paragraph {
   font-size: 1.125em;
   line-height: 150%; /* 1.6875em */
 }
 
 @media only screen and (max-width: 767px) {
-  .cabecalho-lg {
+  .header-lg {
     font-size: 2.75em;
   }
 
-  .cabecalho {
+  .header {
     font-size: 2.3125em;
   }
 
-  .subtitulo-lg {
+  .subtitle-lg {
     font-size: 1.625em;
   }
 }
