@@ -12,7 +12,7 @@ import YourList from './YourList.vue';
 export default {
     data() {
         return {
-            ingredients: ['Garlic', 'Butter', 'Oregano'] as string[]
+            ingredients: ['Garlic', 'Butter', 'Oregano']
         }
     },
     components: { SelectIngredients, YourList }
