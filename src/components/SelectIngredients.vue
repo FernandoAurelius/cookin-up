@@ -1,13 +1,13 @@
 <template>
     <section class="select-ingredients">
         <h1 class="header ingredients-title">Ingredients</h1>
-        <p class="paragraph-lg">
+        <p class="paragraph-lg select-text">
             Select below the ingredients you want to use in this recipe:
         </p>
 
         <ul class="categories">
             <li v-for="category in categories" :key="category.name">
-                {{ category.name }}
+                <CategoryCard :category="category" />
             </li>
         </ul>
 
@@ -21,6 +21,7 @@
 
 import { getCategories } from '@/http';
 import type ICategory from '@/interfaces/ICategory';
+import CategoryCard from './CategoryCard.vue';
 
 
 export default {
@@ -31,12 +32,12 @@ export default {
     },
     async created() {
         this.categories = await getCategories();
-    }
+    },
+    components: { CategoryCard }
 }
 </script>
 
 <style scoped>
-
 .select-ingredients {
     display: flex;
     flex-direction: column;
@@ -72,4 +73,7 @@ export default {
     }
 }
 
+.select-text {
+    margin-bottom: 1.5rem;
+}
 </style>
