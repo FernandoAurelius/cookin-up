@@ -1,24 +1,4 @@
-<template>
-    <section class="select-ingredients">
-        <h1 class="header ingredients-title">Ingredients</h1>
-        <p class="paragraph-lg select-text">
-            Select below the ingredients you want to use in this recipe:
-        </p>
-
-        <ul class="categories">
-            <li v-for="category in categories" :key="category.name">
-                <CategoryCard :category="category" />
-            </li>
-        </ul>
-
-        <p class="paragraph tip">
-            *Note: we consider that you have salt, pepper and water at home.
-        </p>
-    </section>
-</template>
-
 <script lang="ts">
-
 import { getCategories } from '@/http';
 import type ICategory from '@/interfaces/ICategory';
 import CategoryCard from './CategoryCard.vue';
@@ -33,9 +13,33 @@ export default {
     async created() {
         this.categories = await getCategories();
     },
+    emits: ['addIngredient', 'removeIngredient'],
     components: { CategoryCard }
 }
 </script>
+
+<template>
+    <section class="select-ingredients">
+        <h1 class="header ingredients-title">Ingredients</h1>
+        <p class="paragraph-lg select-text">
+            Select below the ingredients you want to use in this recipe:
+        </p>
+
+        <ul class="categories">
+            <li v-for="category in categories" :key="category.name">
+                <CategoryCard 
+                   :category="category"
+                   @add-ingredient="$emit('addIngredient', $event)"
+                   @remove-ingredient="$emit('removeIngredient', $event)" 
+                />
+            </li>
+        </ul>
+
+        <p class="paragraph tip">
+            *Note: we consider that you have salt, pepper and water at home.
+        </p>
+    </section>
+</template>
 
 <style scoped>
 .select-ingredients {

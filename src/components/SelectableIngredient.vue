@@ -14,8 +14,15 @@ export default {
     methods: {
         toggleSelected() {
             this.selected = !this.selected;
+
+            if (this.selected) {
+                this.$emit('addIngredient', this.ingredient);
+                return;
+            }
+            this.$emit('removeIngredient', this.ingredient);
         }
     },
+    emits: ['addIngredient', 'removeIngredient'],
     components: { Tag }
 }
 </script>

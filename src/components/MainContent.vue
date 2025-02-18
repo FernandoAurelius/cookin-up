@@ -1,10 +1,3 @@
-<template>
-    <main class="main-content">
-        <YourList :ingredients="ingredients" />
-        <SelectIngredients />
-    </main>
-</template>
-
 <script lang="ts">
 import SelectIngredients from './SelectIngredients.vue';
 import YourList from './YourList.vue';
@@ -12,12 +5,30 @@ import YourList from './YourList.vue';
 export default {
     data() {
         return {
-            ingredients: ['Garlic', 'Butter', 'Oregano']
+            ingredients: [] as string[]
+        }
+    },
+    methods: {
+        addIngredient(ingredient: string) {
+            this.ingredients.push(ingredient);
+        },
+        removeIngredient(ingredient: string) {
+            this.ingredients = this.ingredients.filter(i => i !== ingredient);
         }
     },
     components: { SelectIngredients, YourList }
 }
 </script>
+
+<template>
+    <main class="main-content">
+        <YourList :ingredients="ingredients" />
+        <SelectIngredients  
+            @add-ingredient="addIngredient($event)"
+            @remove-ingredient="removeIngredient($event)"
+        />
+    </main>
+</template>
 
 <style scoped>
 .main-content {
