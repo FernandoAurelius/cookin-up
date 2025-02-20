@@ -3,30 +3,14 @@ import SelectIngredients from './SelectIngredients.vue';
 import YourList from './YourList.vue';
 
 export default {
-    data() {
-        return {
-            ingredients: [] as string[]
-        }
-    },
-    methods: {
-        addIngredient(ingredient: string) {
-            this.ingredients.push(ingredient);
-        },
-        removeIngredient(ingredient: string) {
-            this.ingredients = this.ingredients.filter(i => i !== ingredient);
-        }
-    },
     components: { SelectIngredients, YourList }
 }
 </script>
 
 <template>
     <main class="main-content">
-        <YourList :ingredients="ingredients" />
-        <SelectIngredients  
-            @add-ingredient="addIngredient($event)"
-            @remove-ingredient="removeIngredient($event)"
-        />
+        <YourList :ingredients="$store.state.ingredients" />
+        <SelectIngredients />
     </main>
 </template>
 

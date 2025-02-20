@@ -1,4 +1,5 @@
 <script lang="ts">
+import { mapMutations } from 'vuex';
 import Tag from './Tag.vue';
 
 export default {
@@ -12,14 +13,15 @@ export default {
         }
     },
     methods: {
+        ...mapMutations(['addIngredient', 'removeIngredient']),
         toggleSelected() {
             this.selected = !this.selected;
 
             if (this.selected) {
-                this.$emit('addIngredient', this.ingredient);
+                this.addIngredient(this.ingredient);
                 return;
             }
-            this.$emit('removeIngredient', this.ingredient);
+            this.removeIngredient(this.ingredient);
         }
     },
     emits: ['addIngredient', 'removeIngredient'],
