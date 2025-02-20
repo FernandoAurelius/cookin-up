@@ -24,7 +24,6 @@ export default {
             this.removeIngredient(this.ingredient);
         }
     },
-    emits: ['addIngredient', 'removeIngredient'],
     components: { Tag }
 }
 </script>

@@ -1,19 +1,16 @@
 <script lang="ts">
-import { getCategories } from '@/http';
 import type ICategory from '@/interfaces/ICategory';
 import CategoryCard from './CategoryCard.vue';
+import { mapActions } from 'vuex';
 
 
 export default {
-    data() {
-        return {
-            categories: [] as ICategory[]
-        }
-    },
     async created() {
-        this.categories = await getCategories();
+        this.loadCategories();
     },
-    emits: ['addIngredient', 'removeIngredient'],
+    methods: {
+        ...mapActions(['loadCategories'])
+    },
     components: { CategoryCard }
 }
 </script>
@@ -26,7 +23,7 @@ export default {
         </p>
 
         <ul class="categories">
-            <li v-for="category in categories" :key="category.name">
+            <li v-for="category in $store.state.categories" :key="category.name">
                 <CategoryCard 
                    :category="category"
                    @add-ingredient="$emit('addIngredient', $event)"
