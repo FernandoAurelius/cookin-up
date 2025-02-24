@@ -1,9 +1,10 @@
 <script lang="ts">
 import SelectIngredients from './SelectIngredients.vue';
 import YourList from './YourList.vue';
+import MainButton from './MainButton.vue';
 
 export default {
-    components: { SelectIngredients, YourList }
+    components: { SelectIngredients, YourList, MainButton }
 }
 </script>
 
@@ -11,6 +12,7 @@ export default {
     <main class="main-content">
         <YourList :ingredients="$store.state.ingredients" />
         <SelectIngredients />
+        <MainButton />
     </main>
 </template>
 
