@@ -2,20 +2,18 @@ import { createStore } from "vuex";
 import type State from "@/interfaces/State";
 import type ICategory from "./interfaces/ICategory";
 import { getCategories } from "./http";
+import type { Page } from "./interfaces/Page";
 
 export default createStore<State>({
     state() {
         return {
             ingredients: [] as string[],
             categories: [] as ICategory[],
+            content: "SelectIngredients",
         };
     },
     actions: {
         async loadCategories(state) {
-            await new Promise((resolver) => {
-                setTimeout(resolver, 3000);
-            })
-
             let categories: ICategory[] = await getCategories();
             state.commit('loadCategories', categories);
         }
@@ -32,6 +30,10 @@ export default createStore<State>({
         loadCategories(state, categories: ICategory[]) {
             console.log("[loadCategories] loading categories:", categories);
             state.categories = categories;
+        },
+        changeContent(state, content: Page) {
+            console.log("[changeContent] changing content:", content);
+            state.content = content;
         }
     }
 });

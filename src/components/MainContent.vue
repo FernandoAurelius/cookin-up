@@ -2,16 +2,18 @@
 import SelectIngredients from './SelectIngredients.vue';
 import YourList from './YourList.vue';
 import MainButton from './MainButton.vue';
+import ShowRecipes from './ShowRecipes.vue';
 
 export default {
-    components: { SelectIngredients, YourList, MainButton }
+    components: { SelectIngredients, YourList, MainButton, ShowRecipes }
 }
 </script>
 
 <template>
     <main class="main-content">
         <YourList :ingredients="$store.state.ingredients" />
-        <SelectIngredients />
+        <SelectIngredients v-if="$store.state.content === 'SelectIngredients'" />
+        <ShowRecipes v-else-if="$store.state.content === 'ShowRecipes'" />
         <MainButton />
     </main>
 </template>
