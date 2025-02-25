@@ -3,17 +3,20 @@ import SelectIngredients from './SelectIngredients.vue';
 import YourList from './YourList.vue';
 import MainButton from './MainButton.vue';
 import ShowRecipes from './ShowRecipes.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
     components: { SelectIngredients, YourList, MainButton, ShowRecipes }
-}
+})
 </script>
 
 <template>
     <main class="main-content">
         <YourList :ingredients="$store.state.ingredients" />
-        <SelectIngredients v-if="$store.state.content === 'SelectIngredients'" />
-        <ShowRecipes v-else-if="$store.state.content === 'ShowRecipes'" />
+        <KeepAlive include="SelectIngredients">
+            <SelectIngredients v-if="$store.state.content === 'SelectIngredients'" />
+            <ShowRecipes v-else-if="$store.state.content === 'ShowRecipes'" />
+        </KeepAlive>
         <MainButton />
     </main>
 </template>
@@ -28,7 +31,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5rem;
+    gap: 2.5rem;
 }
 
 @media only screen and (max-width: 1300px) {

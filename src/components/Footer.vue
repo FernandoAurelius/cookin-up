@@ -1,18 +1,20 @@
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue';
+
+export default defineComponent({
     name: "Footer",
     data() {
         return {
             year: new Date().getFullYear()
         }
     }
-}
+})
 </script>
 
 <template>
-<footer>
-    Developed by @FernandoAurelius | @{{ year }}
-</footer>
+    <footer>
+        Developed by @FernandoAurelius | @{{ year }}
+    </footer>
 </template>
 
 <style scoped>

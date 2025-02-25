@@ -1,8 +1,9 @@
 <script lang="ts">
 import { mapMutations } from 'vuex';
 import Tag from './Tag.vue';
+import { defineComponent } from 'vue';
 
-export default {
+export default defineComponent({
     name: "SelectableIngredient",
     props: {
         ingredient: { type: String, required: true }
@@ -25,14 +26,11 @@ export default {
         }
     },
     components: { Tag }
-}
+})
 </script>
 
 <template>
-    <button 
-        class="ingredient"
-        @click="toggleSelected()"
-    >
+    <button class="ingredient" @click="toggleSelected()">
         <Tag :text="ingredient" :active="selected" />
     </button>
 </template>

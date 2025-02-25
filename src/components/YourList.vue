@@ -1,33 +1,33 @@
 <script lang="ts">
-import type { PropType } from 'vue';
+import { defineComponent, type PropType } from 'vue';
 import Tag from './Tag.vue';
 
-export default {
-  name: 'YourList',
-  props: {
-    ingredients: { type: Array as PropType<string[]>, required: true }
-  },
-  components: { Tag }
-}
+export default defineComponent({
+    name: 'YourList',
+    props: {
+        ingredients: { type: Array as PropType<string[]>, required: true }
+    },
+    components: { Tag }
+})
 </script>
 
 <template>
     <section>
-            <span class="subtitle-lg your-list-text">
-                Your list:
-            </span>
+        <span class="subtitle-lg your-list-text">
+            Your list:
+        </span>
 
-            <ul v-if="ingredients.length" class="ingredients-your-list">
-                <li v-for="ingredient in ingredients" :key="ingredient">
-                    <Tag :text="ingredient" active />
-                </li>
-            </ul>
+        <ul v-if="ingredients.length" class="ingredients-your-list">
+            <li v-for="ingredient in ingredients" :key="ingredient">
+                <Tag :text="ingredient" active />
+            </li>
+        </ul>
 
-            <p v-else class="paragraph empty-list">
-                <img src="../assets/images/icons/empty-list.svg" alt="Search icon (magnifying glass)">
-                Your list is empty, select ingredients to start.
-            </p>
-        </section>
+        <p v-else class="paragraph empty-list">
+            <img src="../assets/images/icons/empty-list.svg" alt="Search icon (magnifying glass)">
+            Your list is empty, select ingredients to start.
+        </p>
+    </section>
 </template>
 
 <style scoped>

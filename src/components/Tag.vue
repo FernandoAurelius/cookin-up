@@ -1,11 +1,13 @@
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue'
+
+export default defineComponent({
     name: 'Tag',
     props: {
         text: { type: String, required: true },
         active: Boolean
     }
-}
+})
 </script>
 
 <template>

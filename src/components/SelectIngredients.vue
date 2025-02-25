@@ -2,9 +2,11 @@
 import type ICategory from '@/interfaces/ICategory';
 import CategoryCard from './CategoryCard.vue';
 import { mapActions } from 'vuex';
+import { defineComponent } from 'vue';
 
 
-export default {
+export default defineComponent({
+    name: 'SelectIngredients',
     async created() {
         this.loadCategories();
     },
@@ -12,7 +14,7 @@ export default {
         ...mapActions(['loadCategories'])
     },
     components: { CategoryCard }
-}
+})
 </script>
 
 <template>
@@ -24,11 +26,7 @@ export default {
 
         <ul class="categories">
             <li v-for="category in $store.state.categories" :key="category.name">
-                <CategoryCard 
-                   :category="category"
-                   @add-ingredient="$emit('addIngredient', $event)"
-                   @remove-ingredient="$emit('removeIngredient', $event)" 
-                />
+                <CategoryCard :category="category" />
             </li>
         </ul>
 

@@ -1,15 +1,15 @@
 <script lang="ts">
-import { mapMutations } from 'vuex';
+import { defineComponent } from 'vue'
 
-export default {
+export default defineComponent({
     name: "MainButton",
     data() {
         return {
-            placeholder: "" as string
+            placeholder: ""
         }
     },
     created() {
-        return this.placeholder = "Search recipes!"
+        this.placeholder = "Search recipes!"
     },
     methods: {
         changeContent() {
@@ -27,7 +27,7 @@ export default {
             }
         }
     }
-}
+})
 </script>
 
 <template>
@@ -38,7 +38,7 @@ export default {
 
 <style scoped>
 .main-button {
-    padding: 1em 5em;
+    padding: 1em 7rem;
     background-color: var(--ochre);
     color: var(--white);
     font-size: large;
