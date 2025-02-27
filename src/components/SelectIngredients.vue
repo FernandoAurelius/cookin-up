@@ -8,7 +8,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({
     name: 'SelectIngredients',
     async created() {
-        this.loadCategories();
+        this.loadCategories(this.$i18n.locale);
     },
     methods: {
         ...mapActions(['loadCategories'])
@@ -19,9 +19,9 @@ export default defineComponent({
 
 <template>
     <section class="select-ingredients">
-        <h1 class="header ingredients-title">Ingredients</h1>
+        <h1 class="header ingredients-title">{{ $t('selectIngredientsTitle') }}</h1>
         <p class="paragraph-lg select-text">
-            Select below the ingredients you want to use in this recipe:
+            {{ $t('selectIngredientsText') }}
         </p>
 
         <ul class="categories">
@@ -31,7 +31,7 @@ export default defineComponent({
         </ul>
 
         <p class="paragraph tip">
-            *Note: we consider that you have salt, pepper and water at home.
+            {{ $t('selectIngredientsTip') }}
         </p>
     </section>
 </template>

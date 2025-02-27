@@ -27,7 +27,7 @@ export default defineComponent({
     created() {
         if (this.DEBUG) console.log('ShowRecipes component created');
         if (this.DEBUG) console.log('Dispatching loadRecipes action');
-        this.$store.dispatch("loadRecipes");
+        this.$store.dispatch("loadRecipes", this.$i18n.locale);
         if (this.DEBUG) console.log('Store recipes:', this.$store.state.recipes);
         if (this.DEBUG) console.log('User ingredients:', this.ingredients);
     },
@@ -51,10 +51,10 @@ export default defineComponent({
 
 <template>
     <section class="show-recipes">
-        <h1 class="header recipes-title">Recipes</h1>
-        <p class="paragraph-lg results-text">Results found: {{ recipes.length }}</p>
+        <h1 class="header recipes-title">{{ $t('showRecipesTitle') }}</h1>
+        <p class="paragraph-lg results-text">{{ $t('showRecipesResultsText') }} {{ recipes.length }}</p>
         <div v-if="recipes.length > 0">
-            <p class="paragraph-lg options-text">See the options for recipes we found with the ingredients you have!</p>
+            <p class="paragraph-lg options-text">{{ $t('showRecipesOptionsText') }}</p>
             <ul class="recipes">
                 <li v-for="recipe in recipes" :key="recipe.name">
                     <RecipeCard :recipe="recipe" />
@@ -62,8 +62,7 @@ export default defineComponent({
             </ul>
         </div>
         <div v-else>
-            <p class="paragraph-lg">Ops! We couldn't find any results to your combination 😿. Maybe trying
-                again?</p>
+            <p class="paragraph-lg">{{ $t('showRecipesNotFound') }}</p>
             <img src="/src/assets/images/no-recipes.png" alt=" Broken egg icon in a cartoon-style." class="no-recipes">
         </div>
     </section>

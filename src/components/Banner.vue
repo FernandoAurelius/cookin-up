@@ -5,13 +5,13 @@
 
       <p class="header-lg header-phrase">
         <span class="green-text">
-          {{ $t.headerPhrase1 }}
+          {{ $t('headerPhrase1') }}
         </span>
-        awaken the chef inside you!
+        {{ $t('headerPhrase2') }}
       </p>
 
       <p class="subtitle-lg">
-        Explore new recipes every day with ingredients within your reach!
+        {{ $t('headerSubtitle') }}
       </p>
     </div>
 

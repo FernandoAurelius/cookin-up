@@ -15,12 +15,12 @@ export default createStore<State>({
         };
     },
     actions: {
-        async loadCategories(state) {
-            let categories: ICategory[] = await getCategories();
+        async loadCategories(state, language) {
+            let categories: ICategory[] = await getCategories(language);
             state.commit('loadCategories', categories);
         },
-        async loadRecipes(state) {
-            let recipes: IRecipe[] = await getRecipes();
+        async loadRecipes(state, language) {
+            let recipes: IRecipe[] = await getRecipes(language);
             state.commit('loadRecipes', recipes);
         }
     },

@@ -15,7 +15,7 @@ export default defineComponent({
 <template>
   <article class="category">
     <header class="category__header">
-      <img :src="`/images/icons/category_ingredients/${category.image}`" class="category__image">
+      <img :src="`/images/icons/category_ingredients/fresh_fruits.png`" class="category__image">
       <h2 class="paragraph-lg category__name">{{ category.name }}</h2>
     </header>
     <ul class="category__ingredients">

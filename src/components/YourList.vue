@@ -14,7 +14,7 @@ export default defineComponent({
 <template>
     <section>
         <span class="subtitle-lg your-list-text">
-            Your list:
+            {{ $t('yourListText') }}
         </span>
 
         <ul v-if="ingredients.length" class="ingredients-your-list">
@@ -25,7 +25,7 @@ export default defineComponent({
 
         <p v-else class="paragraph empty-list">
             <img src="../assets/images/icons/empty-list.svg" alt="Search icon (magnifying glass)">
-            Your list is empty, select ingredients to start.
+            {{ $t('emptyYourList') }}
         </p>
     </section>
 </template>

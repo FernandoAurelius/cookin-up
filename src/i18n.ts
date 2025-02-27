@@ -7,6 +7,7 @@ const messages = {
     headerSubtitle: "Explore new recipes every day with ingredients within your reach!",
     yourListText: "Your list:",
     emptyYourList: "Your list is empty, select ingredients to start.",
+    selectIngredientsTitle: "Ingredients",
     selectIngredientsText: "Select below the ingredients you want to use in this recipe:",
     selectIngredientsTip: "*Note: we consider that you have salt, pepper and water at home.",
     showRecipesTitle: "Recipes",
@@ -22,6 +23,7 @@ const messages = {
     headerSubtitle: "Explore novas receitas todos os dias com ingredientes dentro do seu alcance!",
     yourListText: "Sua lista:",
     emptyYourList: "Sua lista está vazia, selecione ingredientes para começar.",
+    selectIngredientsTitle: "Ingredientes",
     selectIngredientsText: "Selecione abaixo os ingredientes que você deseja usar nesta receita:",
     selectIngredientsTip: "*Nota: consideramos que você tem sal, pimenta e água em casa.",
     showRecipesTitle: "Receitas",
@@ -30,6 +32,7 @@ const messages = {
     showRecipesNotFound: "Ops! Não conseguimos encontrar nenhum resultado para sua combinação 😿. Talvez você deva tentar de novo?",
     mainButtonSearchRecipes: "Buscar receitas!",
     mainButtonEditList: "Editar lista"
+
   },
 }
 

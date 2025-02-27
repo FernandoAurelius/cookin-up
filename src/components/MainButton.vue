@@ -3,23 +3,25 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
     name: "MainButton",
-    data() {
-        return {
-            placeholder: ""
+    computed: {
+        buttonText() {
+            switch (this.$store.state.content) {
+                case "SelectIngredients":
+                    return this.$t('mainButtonSearchRecipes');
+                case "ShowRecipes":
+                    return this.$t('mainButtonEditList');
+                default:
+                    console.error("Unknown content! Please contact the admin.");
+            }
         }
-    },
-    created() {
-        this.placeholder = "Search recipes!"
     },
     methods: {
         changeContent() {
-            switch (this.placeholder) {
-                case "Search recipes!":
-                    this.placeholder = "Edit list";
+            switch (this.$store.state.content) {
+                case "SelectIngredients":
                     this.$store.commit("changeContent", "ShowRecipes");
                     break;
-                case "Edit list":
-                    this.placeholder = "Search recipes!";
+                case "ShowRecipes":
                     this.$store.commit("changeContent", "SelectIngredients");
                     break;
                 default:
@@ -32,7 +34,7 @@ export default defineComponent({
 
 <template>
     <button type="button" class="main-button" @click="changeContent()">
-        {{ placeholder }}
+        {{ buttonText }}
     </button>
 </template>
 

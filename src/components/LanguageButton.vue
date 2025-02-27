@@ -18,6 +18,8 @@ export default defineComponent({
     methods: {
         toggleLanguage() {
             this.$i18n.locale = this.currentLanguage === 'en' ? 'pt' : 'en';
+            this.$store.dispatch('loadCategories', this.$i18n.locale);
+            this.$store.dispatch('loadRecipes', this.$i18n.locale);
         },
     },
 });
@@ -28,7 +30,7 @@ export default defineComponent({
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background: transparent;
+    background-color: black;
     border: none;
     cursor: pointer;
 }
