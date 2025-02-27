@@ -5,7 +5,7 @@
 
       <p class="header-lg header-phrase">
         <span class="green-text">
-          A feast of ideas to
+          {{ $t.headerPhrase1 }}
         </span>
         awaken the chef inside you!
       </p>

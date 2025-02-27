@@ -3,9 +3,10 @@ import Banner from './components/Banner.vue';
 import MainContent from './components/MainContent.vue';
 import Footer from './components/Footer.vue';
 import { defineComponent } from 'vue';
+import LanguageButton from './components/LanguageButton.vue';
 
 export default defineComponent({
-  components: { Banner, MainContent, Footer }
+  components: { Banner, MainContent, Footer, LanguageButton }
 })
 </script>
 
@@ -13,4 +14,5 @@ export default defineComponent({
   <Banner />
   <MainContent />
   <Footer />
+  <LanguageButton />
 </template>
