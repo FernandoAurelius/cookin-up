@@ -7,7 +7,7 @@ import LanguageButton from './components/LanguageButton.vue';
 
 export default defineComponent({
   components: { Banner, MainContent, Footer, LanguageButton }
-})
+});
 </script>
 
 <template>

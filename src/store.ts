@@ -44,6 +44,10 @@ export default createStore<State>({
         changeContent(state, content: Page) {
             console.log("[changeContent] changing content:", content);
             state.content = content;
+        },
+        clearIngredients(state) {
+            console.log("[clearIngredients] clearing ingredients");
+            state.ingredients = [];
         }
     }
 });

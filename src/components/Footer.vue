@@ -13,7 +13,7 @@ export default defineComponent({
 
 <template>
     <footer>
-        Developed by @FernandoAurelius | @{{ year }}
+        {{ $t("footerText") }} | @{{ year }}
     </footer>
 </template>
 

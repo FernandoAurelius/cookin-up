@@ -15,7 +15,8 @@ const messages = {
     showRecipesOptionsText: "See the options of recipes that we found with the ingredients you have!",
     showRecipesNotFound: "Ops! We couldn't find any result for your combination 😿. Maybe you should try again?",
     mainButtonSearchRecipes: "Search recipes!",
-    mainButtonEditList: "Edit list"
+    mainButtonEditList: "Edit list",
+    footerText: "Developed by FernandoAurelius"
   },
   pt: {
     headerPhrase1: "Um banquete de ideias para",
@@ -31,8 +32,8 @@ const messages = {
     showRecipesOptionsText: "Veja as opções de receitas que encontramos com os ingredientes que você possui!",
     showRecipesNotFound: "Ops! Não conseguimos encontrar nenhum resultado para sua combinação 😿. Talvez você deva tentar de novo?",
     mainButtonSearchRecipes: "Buscar receitas!",
-    mainButtonEditList: "Editar lista"
-
+    mainButtonEditList: "Editar lista",
+    footerText: "Desenvolvido por FernandoAurelius"
   },
 }
 

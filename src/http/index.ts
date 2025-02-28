@@ -39,7 +39,7 @@ export async function getRecipes(language: string): Promise<IRecipe[]> {
       )
     case 'pt':
       return await fetch(
-        "https://gist.github.com/FernandoAurelius/fc3c756b77826583a32b6c9e6d60526d/raw"
+        "https://gist.githubusercontent.com/FernandoAurelius/fc3c756b77826583a32b6c9e6d60526d/raw"
       )
       .then(
         (response) => response.json()
