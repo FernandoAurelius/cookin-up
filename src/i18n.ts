@@ -39,8 +39,8 @@ const messages = {
 
 const i18n = createI18n({
   legacy: true,
-  locale: 'en',
-  fallbackLocale: 'pt',
+  locale: 'pt',
+  fallbackLocale: 'en',
   messages,
 });
 
